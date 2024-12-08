@@ -23,12 +23,7 @@ class RegisterCubit extends Cubit<RegisterFormState> {
 
   void register() {
     emit(state.copyWith(status: RegisterFormStatus.loading));
-    try {
-      print("name: ${state.name}");
-      print("lastName: ${state.lastName}");
-      print("email: ${state.email}");
-      print("password: ${state.password}");
-    } catch (err) {
+    try {} catch (err) {
       emit(state.copyWith(
           status: RegisterFormStatus.failure, errorMessage: err.toString()));
     }
